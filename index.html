@@ -4,22 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
     <title>Document</title>
 
 </head>
 
 <body>
-        <div id="draw-buttons">
-                <button id="line">line</button>
-                <button id="smoke">smoke</button>
-        </div>
+    <img class="map_img" id="mapImg" src="MapImages/de_cache_overhead.jpg">
 
-        <div id="paint">
-                <canvas id="myCanvas" width="800px" height="800px" 
-                style="background:url('./mapImages/de_cache_overhead.jpg')"></canvas>
-        </div>
-        
+    <div id="smoke" class="smoke_overlay" style="display:none;">
+			<img src="./img/iconfinder_linkedin_834713.png" alt="smoke grenade">
+    </div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 <script src="canvas.js"></script>
 </html>
