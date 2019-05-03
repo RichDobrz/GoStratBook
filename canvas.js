@@ -57,27 +57,46 @@
 
 // setInterval(main, 1000 / 60);
 
-$("#mapImg").click(function() {
-    var position = $(this).offset()
-    $("#smoke").offset(position).show()
-})
+// $("#mapImg").click(function() {
+//     var position = $(this).offset()
+//     $("#smoke").offset(position).show()
+// })
 
-function doSomething(e) {
-	var posx = 0;
-	var posy = 0;
-	if (!e) var e = window.event;
-	if (e.pageX || e.pageY) 	{
-		posx = e.pageX;
-		posy = e.pageY;
-	}
-	else if (e.clientX || e.clientY) 	{
-		posx = e.clientX + document.body.scrollLeft
-			+ document.documentElement.scrollLeft;
-		posy = e.clientY + document.body.scrollTop
-			+ document.documentElement.scrollTop;
-    }
-    $("#mapImg").click(function() {
-        $("#smoke").offset({top: posx, left: posy}).show()
-    })
+// function doSomething(e) {
+// 	var posx = 0;
+// 	var posy = 0;
+// 	if (!e) var e = window.event;
+// 	if (e.pageX || e.pageY) 	{
+// 		posx = e.pageX;
+// 		posy = e.pageY;
+// 	}
+// 	else if (e.clientX || e.clientY) 	{
+// 		posx = e.clientX + document.body.scrollLeft
+// 			+ document.documentElement.scrollLeft;
+// 		posy = e.clientY + document.body.scrollTop
+// 			+ document.documentElement.scrollTop;
+//     }
+//     $("#mapImg").click(function() {
+//         $("#smoke").offset({top: posx, left: posy}).show()
+//     })
 	
-}
+// }
+
+$(function(){
+	var fadeDelay = 1000;
+	var fadeDuration = 1000;
+    $(document).click(function(e){
+		var div = $('<div class="image-wrapper">')
+			.css({
+				"left": e.pageX + 'px',
+				"top": e.pageY + 'px'
+			})
+			.append($('<img src="" alt="myimage" />'))
+			.appendTo(document.body);
+				
+		setTimeout(function() {
+			div.addClass('fade-out');			
+			setTimeout(function() { div.remove(); }, fadeDuration);
+		}, fadeDelay);
+    });
+});
