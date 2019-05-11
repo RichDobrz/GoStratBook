@@ -91,12 +91,8 @@ $(function(){
 				"left": e.pageX + 'px',
 				"top": e.pageY + 'px'
 			})
-			.append($('<img src="" alt="myimage" />'))
+			.append($('<img src="./img/iconfinder_linkedin_834713.png" alt="myimage" />'))
 			.appendTo(document.body);
 				
-		setTimeout(function() {
-			div.addClass('fade-out');			
-			setTimeout(function() { div.remove(); }, fadeDuration);
-		}, fadeDelay);
     });
 });
